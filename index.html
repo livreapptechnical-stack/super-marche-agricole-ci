@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Super Marché Agricole CI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: vert profond du logo, affiche produit en tête, cartes produits en grille 2 colonnes, formulaire WhatsApp, barre collante mobile */
+:root{
+  --bg:#f5f7ef; --surface:#ffffff; --fg:#14231a; --muted:#51605a;
+  --green:#0f4d2e; --green-deep:#0a3a22; --lime:#8cc63f; --sun:#f08a1c;
+  --wa:#1fa855; --wa-fg:#ffffff; --line:#d9e0cf; --on-green:#f3f8ea;
+  --f-display:'Anton','Impact','Arial Narrow',sans-serif;
+  --f-body:'Archivo','Segoe UI',Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c1710; --surface:#14231a; --fg:#eef4e6; --muted:#a3b3a8; --green:#1b6b42; --green-deep:#07140c;
+  --lime:#9ad24a; --sun:#f5983a; --line:#25382b; --on-green:#f3f8ea; --wa:#25b865; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c1710; --surface:#14231a; --fg:#eef4e6; --muted:#a3b3a8; --green:#1b6b42; --green-deep:#07140c;
+  --lime:#9ad24a; --sun:#f5983a; --line:#25382b; --on-green:#f3f8ea; --wa:#25b865; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.5;padding-bottom:84px}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;letter-spacing:.01em;text-wrap:balance;margin:0;line-height:1.05;text-transform:uppercase}
+p{margin:0}
+a{color:inherit}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:0 1.25rem;border-radius:6px;font:700 1rem var(--f-body);text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn-wa{background:var(--wa);color:var(--wa-fg)}
+.btn-ghost{border-color:currentColor;background:transparent}
+.btn:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.top{background:var(--green-deep);color:var(--on-green);font-size:.85rem}
+.top .wrap{display:flex;justify-content:space-between;gap:1rem;padding-block:.55rem;flex-wrap:wrap}
+.top b{color:var(--lime);font-weight:600}
+.hero{background:var(--green);color:var(--on-green)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;padding-block:2.5rem}
+.hero h1{font-size:clamp(2.4rem,7vw,4.4rem)}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero p.lead{margin-top:1rem;max-width:46ch;font-size:1.08rem;opacity:.94}
+.hero .cta{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem}
+.hero .cta .btn-ghost{color:var(--on-green)}
+.hero-photos{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;min-width:0}
+.hero-photos img{width:100%;height:100%;object-fit:cover;border-radius:8px;display:block;aspect-ratio:1/1.15;background:#fff}
+.hero-photos img:first-child{grid-row:span 2;aspect-ratio:auto}
+.chips{border-bottom:1px solid var(--line);background:var(--surface)}
+.chips ul{list-style:none;margin:0;padding:.9rem 0;display:flex;gap:.6rem 1.5rem;flex-wrap:wrap;font-weight:600;font-size:.92rem}
+.chips li::before{content:"";display:inline-block;width:.6rem;height:.6rem;background:var(--lime);border-radius:50%;margin-right:.5rem}
+section{padding-block:3rem}
+.sec-h{display:flex;justify-content:space-between;align-items:end;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.sec-h h2{font-size:clamp(1.8rem,5vw,2.6rem)}
+.sec-h p{color:var(--muted);max-width:44ch}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.card .ph{background:#fff;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.thumbs{display:flex;gap:.4rem;padding:.5rem .75rem 0}
+.thumbs button{width:52px;height:52px;padding:0;border:2px solid var(--line);border-radius:6px;overflow:hidden;background:#fff;cursor:pointer}
+.thumbs button[aria-current="true"]{border-color:var(--green)}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.card .body{padding:1rem 1.1rem 1.2rem;display:flex;flex-direction:column;gap:.7rem;flex:1}
+.card h3{font-size:1.5rem}
+.card ul{margin:0;padding-left:1.1rem;color:var(--muted);font-size:.95rem;display:grid;gap:.25rem}
+.price{font-family:var(--f-display);font-size:1.9rem;color:var(--green);letter-spacing:.01em;margin-top:auto}
+:root[data-theme="dark"] .price{color:var(--lime)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .price{color:var(--lime)}}
+.price small{font:500 .85rem var(--f-body);color:var(--muted);letter-spacing:0}
+.price.p2{margin-top:-.4rem}
+.btn2{color:var(--green);border-color:var(--green)}
+:root[data-theme="dark"] .btn2{color:var(--lime);border-color:var(--lime)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn2{color:var(--lime);border-color:var(--lime)}}
+.card .btn{width:100%}
+.note{margin-top:1rem;font-size:.9rem;color:var(--muted)}
+.order{background:var(--green);color:var(--on-green)}
+.order .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:2rem;align-items:start}
+.order h2{font-size:clamp(1.9rem,5vw,2.8rem)}
+.order .how{margin:1rem 0 0;padding-left:1.2rem;display:grid;gap:.5rem;opacity:.95}
+form{background:var(--surface);color:var(--fg);border-radius:10px;padding:1.25rem;display:grid;gap:1rem;min-width:0}
+label{display:grid;gap:.3rem;font-weight:600;font-size:.92rem}
+select,input{font:500 1rem var(--f-body);min-height:48px;padding:0 .8rem;border-radius:6px;border:1.5px solid var(--line);background:var(--bg);color:var(--fg);width:100%}
+.row{display:grid;grid-template-columns:1fr 110px;gap:.8rem}
+form .hint{font-size:.85rem;color:var(--muted)}
+.numline{font-size:.85rem;color:var(--muted)}
+.numline b{color:var(--fg);user-select:all}
+.faq{max-width:760px}
+details{border-bottom:1px solid var(--line);padding:.9rem 0}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::after{content:"+";font-size:1.3rem;line-height:1;color:var(--green)}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:.6rem;color:var(--muted);max-width:62ch}
+footer{background:var(--green-deep);color:var(--on-green);padding-block:2rem 2.5rem;font-size:.9rem}
+footer .wrap{display:grid;gap:.6rem}
+footer .brand{font-family:var(--f-display);font-size:1.5rem;text-transform:uppercase}
+footer small{opacity:.75;max-width:70ch}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);padding:.6rem max(16px,env(safe-area-inset-right,0px)) calc(.6rem + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:flex;justify-content:space-between;align-items:center;gap:.8rem}
+.bar span{font-size:.85rem;color:var(--muted);line-height:1.2}
+.bar b{display:block;font-family:var(--f-display);font-size:1.25rem;color:var(--fg);font-weight:400}
+@media (max-width:760px){
+  .hero .wrap,.order .wrap{grid-template-columns:1fr}
+  .hero .wrap{padding-block:2rem}
+  .grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head><body>
+
+<div class="top"><div class="wrap"><span><b>Super Marché Agricole CI</b> · Matériel agricole et irrigation</span><span>Commande directe sur WhatsApp</span></div></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Pompez et arrosez <em>plus vite</em> vos parcelles</h1>
+      <p class="lead">Motopompe flottante et tuyaux d'irrigation pour la culture maraîchère, les plantations et le jardin. Écrivez-nous sur WhatsApp, nous vous répondons avec le prix et la livraison.</p>
+      <div class="cta">
+        <a class="btn btn-wa" href="#commande">Commander sur WhatsApp</a>
+        <a class="btn btn-ghost" href="#produits">Voir les produits</a>
+      </div>
+    </div>
+    <div class="hero-photos">
+      <img src="img/spray1.jpg" alt="Motopompe flottante à moteur 2 temps dans son flotteur jaune">
+      <img src="img/laser.jpg" alt="Rouleaux de tuyau d'irrigation noir">
+      <img src="img/white.jpg" alt="Tuyau plat blanc enroulé">
+    </div>
+  </div>
+</header>
+
+<div class="chips"><div class="wrap"><ul>
+  <li>Commande par WhatsApp</li>
+  <li>Pour usage agricole et jardin</li>
+  <li>Conseils avant achat</li>
+  <li>Livraison confirmée selon votre ville</li>
+</ul></div></div>
+
+<section id="produits"><div class="wrap">
+  <div class="sec-h"><h2>Nos produits</h2><p>Quatre références disponibles, à partir de 25 000 FCFA. Appuyez sur « Commander » pour envoyer votre demande directement sur WhatsApp.</p></div>
+  <div class="grid">
+
+    <article class="card">
+      <div class="ph"><img id="sprayMain" src="img/spray1.jpg" alt="Motopompe flottante vue de dessus"></div>
+      <div class="thumbs" role="group" aria-label="Autres photos de la motopompe">
+        <button type="button" data-src="img/spray1.jpg" aria-current="true" aria-label="Photo 1"><img src="img/spray1.jpg" alt=""></button>
+        <button type="button" data-src="img/spray2.jpg" aria-label="Photo 2"><img src="img/spray2.jpg" alt=""></button>
+      </div>
+      <div class="body">
+        <h3>Motopompe flottante</h3>
+        <ul>
+          <li>Moteur 2 temps, modèle 40-5</li>
+          <li>Corps jaune flottant avec arceau de maintien en métal</li>
+          <li>Raccord de sortie à plusieurs embouts</li>
+        </ul>
+        <div class="price">120 000 <small>FCFA</small></div>
+        <a class="btn btn-wa" href="#commande" data-pick="moto">Commander</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="ph"><img src="img/laser.jpg" alt="Deux rouleaux de tuyau laser spray noir diamètre 32"></div>
+      <div class="body">
+        <h3>Tuyau laser spray Ø32, 9 trous</h3>
+        <ul>
+          <li>Rouleau de 200 m</li>
+          <li>Épaisseur 300 microns, plus résistant</li>
+          <li>9 trous de sortie d'eau</li>
+        </ul>
+        <div class="price">35 000 <small>FCFA le rouleau</small></div>
+        <a class="btn btn-wa" href="#commande" data-pick="l9">Commander</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="ph"><img src="img/drip.jpg" alt="Trois rouleaux de tuyau laser spray noir diamètre 32"></div>
+      <div class="body">
+        <h3>Tuyau laser spray Ø32, 5 trous</h3>
+        <ul>
+          <li>Rouleau de 200 m</li>
+          <li>Épaisseur 200 microns</li>
+          <li>5 trous de sortie d'eau</li>
+        </ul>
+        <div class="price">25 000 <small>FCFA le rouleau</small></div>
+        <a class="btn btn-wa" href="#commande" data-pick="l5">Commander</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="ph"><img src="img/white.jpg" alt="Tuyau plat blanc enroulé"></div>
+      <div class="body">
+        <h3>Tuyau plat, rouleau de 50 m</h3>
+        <ul>
+          <li>Tuyau tissé qui s'aplatit une fois vidé</li>
+          <li>Se range en rouleau, léger à transporter</li>
+          <li>Deux diamètres au choix : 50 ou 75</li>
+        </ul>
+        <div class="price">30 000 <small>FCFA en Ø50</small></div>
+        <div class="price p2">40 000 <small>FCFA en Ø75</small></div>
+        <a class="btn btn-wa" href="#commande" data-pick="p50">Commander en Ø50</a>
+        <a class="btn btn-ghost btn2" href="#commande" data-pick="p75">Commander en Ø75</a>
+      </div>
+    </article>
+
+  </div>
+  <p class="note">Prix en FCFA, hors livraison. Nous confirmons la disponibilité et la livraison sur WhatsApp.</p>
+</div></section>
+
+<section class="order" id="commande"><div class="wrap">
+  <div>
+    <h2>Commander en 1 minute</h2>
+    <ol class="how">
+      <li>Choisissez le produit et la quantité.</li>
+      <li>Indiquez votre ville ou commune.</li>
+      <li>Touchez le bouton : votre message s'ouvre dans WhatsApp, prêt à envoyer.</li>
+      <li>Nous confirmons le prix, la livraison et le mode de remise.</li>
+    </ol>
+  </div>
+  <form id="orderForm" autocomplete="off">
+    <label for="prod">Produit
+      <select id="prod">
+        <option value="moto">Motopompe flottante (120 000 FCFA)</option>
+        <option value="l9">Tuyau laser Ø32, 9 trous, 200 m (35 000 FCFA)</option>
+        <option value="l5">Tuyau laser Ø32, 5 trous, 200 m (25 000 FCFA)</option>
+        <option value="p50">Tuyau plat 50 m, Ø50 (30 000 FCFA)</option>
+        <option value="p75">Tuyau plat 50 m, Ø75 (40 000 FCFA)</option>
+      </select>
+    </label>
+    <div class="row">
+      <label for="city">Ville ou commune
+        <select id="city">
+          <option>Cocody</option><option>Yopougon</option><option>Abobo</option><option>Marcory</option>
+          <option>Plateau</option><option>Treichville</option><option>Koumassi</option><option>Port-Bouët</option>
+          <option>Adjamé</option><option>Attécoubé</option><option>Bingerville</option><option>Anyama</option>
+          <option>Songon</option><option>Bouaké</option><option>Autre ville</option>
+        </select>
+      </label>
+      <label for="qty">Quantité
+        <input id="qty" type="number" inputmode="numeric" min="1" max="999" value="1">
+      </label>
+    </div>
+    <label for="name">Votre nom
+      <input id="name" type="text" placeholder="Ex : Kouassi Yao" autocomplete="name">
+    </label>
+    <a class="btn btn-wa" id="waBtn" href="#" target="_blank" rel="noopener">Envoyer ma commande sur WhatsApp</a>
+    <p class="numline">Numéro WhatsApp : <b id="numShow"></b></p>
+    <p class="hint" id="totalHint"></p>
+  </form>
+</div></section>
+
+<section><div class="wrap faq">
+  <div class="sec-h"><h2>Questions fréquentes</h2></div>
+  <details><summary>Comment passer commande ?</summary><p>Remplissez le formulaire ci-dessus puis envoyez le message sur WhatsApp. Vous pouvez aussi nous écrire directement pour poser vos questions avant d'acheter.</p></details>
+  <details><summary>Quels sont les prix ?</summary><p>Motopompe flottante : 120 000 FCFA. Tuyau laser spray Ø32 de 200 m : 35 000 FCFA en 9 trous (300 microns) et 25 000 FCFA en 5 trous (200 microns). Tuyau plat de 50 m : 30 000 FCFA en Ø50 et 40 000 FCFA en Ø75.</p></details>
+  <details><summary>Quelle livraison, et à quel prix ?</summary><p>Nous confirmons avec vous le délai et les frais selon votre ville ou commune au moment de la commande sur WhatsApp.</p></details>
+  <details><summary>La motopompe est-elle livrée avec ses accessoires ?</summary><p>Sur les photos, elle est dans son corps flottant jaune avec son raccord de sortie à plusieurs embouts. Demandez-nous la liste exacte des accessoires lors de votre commande.</p></details>
+  <details><summary>Quel tuyau choisir pour mon champ ?</summary><p>Dites-nous la taille de votre parcelle et votre culture sur WhatsApp. Nous vous conseillons entre le tuyau laser spray (5 ou 9 trous) et le tuyau plat.</p></details>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="brand">Super Marché Agricole CI</div>
+  <div>Matériel agricole et irrigation · WhatsApp : <b id="numFoot"></b></div>
+  <small>Lisez la notice avant d'utiliser la motopompe. Le moteur fonctionne à l'essence, produit inflammable : tenez-le éloigné des flammes.</small>
+</div></footer>
+
+<div class="bar">
+  <span>Tuyau laser Ø32 dès<b>25 000 FCFA</b></span>
+  <a class="btn btn-wa" href="#commande">Commander</a>
+</div>
+
+<script>
+(function(){
+  // À REMPLACER : numéro WhatsApp des commandes (indicatif 225, sans + ni espaces)
+  var WA_NUMBER = "2250000000000";
+  var WA_DISPLAY = "+225 00 00 00 00 00";
+  var P = {
+    moto:{n:"Motopompe flottante", p:120000},
+    l9:{n:"Tuyau laser spray Ø32, 9 trous, 200 m, 300 microns", p:35000},
+    l5:{n:"Tuyau laser spray Ø32, 5 trous, 200 m, 200 microns", p:25000},
+    p50:{n:"Tuyau plat 50 m, diamètre 50", p:30000},
+    p75:{n:"Tuyau plat 50 m, diamètre 75", p:40000}
+  };
+  var $=function(id){return document.getElementById(id)};
+  var prod=$("prod"),city=$("city"),qty=$("qty"),nm=$("name"),btn=$("waBtn"),hint=$("totalHint");
+  $("numShow").textContent=WA_DISPLAY; $("numFoot").textContent=WA_DISPLAY;
+  function fmt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g," ")}
+  function update(){
+    var it=P[prod.value], q=Math.max(1,parseInt(qty.value,10)||1);
+    var lines=["Bonjour, je veux commander :",
+      "- Produit : "+it.n,
+      "- Quantité : "+q,
+      "- Ville/commune : "+city.value];
+    if(nm.value.trim()) lines.push("- Nom : "+nm.value.trim());
+    lines.push("- Prix indiqué : "+fmt(it.p*q)+" FCFA");
+    btn.href="https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(lines.join("\n"));
+    hint.textContent = "Total estimé : "+fmt(it.p*q)+" FCFA (hors livraison)";
+  }
+  [prod,city,qty,nm].forEach(function(e){e.addEventListener("input",update)});
+  document.querySelectorAll("[data-pick]").forEach(function(a){
+    a.addEventListener("click",function(){prod.value=a.getAttribute("data-pick");update()});
+  });
+  $("orderForm").addEventListener("submit",function(e){e.preventDefault()});
+  var main=$("sprayMain");
+  document.querySelectorAll(".thumbs button").forEach(function(b){
+    b.addEventListener("click",function(){
+      main.src=b.getAttribute("data-src");
+      document.querySelectorAll(".thumbs button").forEach(function(o){o.removeAttribute("aria-current")});
+      b.setAttribute("aria-current","true");
+    });
+  });
+  update();
+})();
+</script>
+</body></html>
