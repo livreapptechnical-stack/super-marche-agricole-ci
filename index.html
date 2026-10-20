@@ -118,6 +118,14 @@ footer small{opacity:.75;max-width:70ch}
 .shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:1.5rem}
 .shots img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line)}
 @media (max-width:720px){.shots{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:80%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.5rem}.shots img{scroll-snap-align:start}}
+.packs{background:var(--surface);border-block:1px solid var(--line)}
+.pgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
+.pack{border:2px solid var(--green);border-radius:10px;padding:1.2rem;display:flex;flex-direction:column;gap:.6rem;min-width:0;background:var(--bg)}
+.pack h3{font-size:1.35rem}
+.pack .sum{color:var(--muted);font-size:.9rem}
+.pack .tot{font:400 2rem var(--f-display);color:var(--green)}
+.pack .tot small{font:600 .85rem var(--f-body);color:var(--muted)}
+@media (max-width:720px){.pgrid{grid-template-columns:1fr}}
 </style>
 </head><body>
 
@@ -220,6 +228,17 @@ footer small{opacity:.75;max-width:70ch}
   <p class="note">Prix en FCFA, hors livraison. Nous confirmons la disponibilité et la livraison sur WhatsApp.</p>
 </div></section>
 
+<section class="packs" id="packs"><div class="wrap">
+  <div class="sec-h"><h2>Packs motopompe + tuyau</h2><p>Tout pour irriguer d'un coup : la motopompe et le tuyau, un seul message WhatsApp.</p></div>
+  <div class="pgrid">
+    <article class="pack"><h3>Motopompe + laser Ø32, 9 trous</h3><p class="sum">120 000 + 35 000 FCFA</p><div class="tot">155 000 <small>FCFA le pack</small></div><a class="btn btn-wa" href="#commande" data-pick="k9">Commander ce pack</a></article>
+    <article class="pack"><h3>Motopompe + laser Ø32, 5 trous</h3><p class="sum">120 000 + 25 000 FCFA</p><div class="tot">145 000 <small>FCFA le pack</small></div><a class="btn btn-wa" href="#commande" data-pick="k5">Commander ce pack</a></article>
+    <article class="pack"><h3>Motopompe + tuyau plat 50 m Ø50</h3><p class="sum">120 000 + 30 000 FCFA</p><div class="tot">150 000 <small>FCFA le pack</small></div><a class="btn btn-wa" href="#commande" data-pick="k50">Commander ce pack</a></article>
+    <article class="pack"><h3>Motopompe + tuyau plat 50 m Ø75</h3><p class="sum">120 000 + 40 000 FCFA</p><div class="tot">160 000 <small>FCFA le pack</small></div><a class="btn btn-wa" href="#commande" data-pick="k75">Commander ce pack</a></article>
+  </div>
+  <p class="note">Prix en FCFA, hors livraison. Total du pack = prix de la motopompe + prix du tuyau.</p>
+</div></section>
+
 <section class="vids" id="videos"><div class="wrap">
   <div class="sec-h"><h2>Voyez-la en action</h2><p>Déballage, débit d'eau et arrosage au champ : regardez avant de commander.</p></div>
   <div class="vgrid">
@@ -261,6 +280,10 @@ footer small{opacity:.75;max-width:70ch}
         <option value="l5">Tuyau laser Ø32, 5 trous, 200 m (25 000 FCFA)</option>
         <option value="p50">Tuyau plat 50 m, Ø50 (30 000 FCFA)</option>
         <option value="p75">Tuyau plat 50 m, Ø75 (40 000 FCFA)</option>
+        <option value="k9">Pack motopompe + laser ø32, 9 trous (155 000 FCFA)</option>
+        <option value="k5">Pack motopompe + laser ø32, 5 trous (145 000 FCFA)</option>
+        <option value="k50">Pack motopompe + tuyau plat 50 m ø50 (150 000 FCFA)</option>
+        <option value="k75">Pack motopompe + tuyau plat 50 m ø75 (160 000 FCFA)</option>
       </select>
     </label>
     <div class="row">
@@ -315,7 +338,11 @@ footer small{opacity:.75;max-width:70ch}
     l9:{n:"Tuyau laser spray Ø32, 9 trous, 200 m, 300 microns", p:35000},
     l5:{n:"Tuyau laser spray Ø32, 5 trous, 200 m, 200 microns", p:25000},
     p50:{n:"Tuyau plat 50 m, diamètre 50", p:30000},
-    p75:{n:"Tuyau plat 50 m, diamètre 75", p:40000}
+    p75:{n:"Tuyau plat 50 m, diamètre 75", p:40000},
+    k9:{n:"Pack motopompe + laser ø32, 9 trous", p:155000},
+    k5:{n:"Pack motopompe + laser ø32, 5 trous", p:145000},
+    k50:{n:"Pack motopompe + tuyau plat 50 m ø50", p:150000},
+    k75:{n:"Pack motopompe + tuyau plat 50 m ø75", p:160000}
   };
   var $=function(id){return document.getElementById(id)};
   var prod=$("prod"),city=$("city"),qty=$("qty"),nm=$("name"),btn=$("waBtn"),hint=$("totalHint");
