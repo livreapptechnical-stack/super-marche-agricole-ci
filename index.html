@@ -115,6 +115,9 @@ footer small{opacity:.75;max-width:70ch}
 .rev cite b{color:var(--fg)}
 .rev .src{margin-top:1rem;color:var(--muted);font-size:.85rem}
 @media (max-width:720px){.rgrid{grid-template-columns:1fr}}
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:1.5rem}
+.shots img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line)}
+@media (max-width:720px){.shots{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:80%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.5rem}.shots img{scroll-snap-align:start}}
 </style>
 </head><body>
 
@@ -232,7 +235,12 @@ footer small{opacity:.75;max-width:70ch}
     <blockquote><p>« Bonjour, j'ai reçu mon colis, merci pour la confiance. »</p><cite><b>Client</b> · message WhatsApp, colis reçu</cite></blockquote>
     <blockquote><p>« Oui, bien reçu, merci beaucoup. »</p><cite><b>Client</b> · message WhatsApp, colis reçu</cite></blockquote>
   </div>
-  <p class="src">Messages réels de clients, noms et numéros masqués.</p>
+  <div class="shots">
+    <img src="img/avis1.jpg" alt="Capture WhatsApp : échange avec un client venu récupérer son colis" loading="lazy">
+    <img src="img/avis2.jpg" alt="Capture WhatsApp : client confirmant avoir bien reçu son colis" loading="lazy">
+    <img src="img/avis3.jpg" alt="Capture WhatsApp : client remerciant pour la confiance après réception" loading="lazy">
+  </div>
+  <p class="src">Captures réelles de conversations WhatsApp, numéros et photos de profil des clients masqués.</p>
 </div></section>
 
 <section class="order" id="commande"><div class="wrap">
@@ -300,8 +308,8 @@ footer small{opacity:.75;max-width:70ch}
 <script>
 (function(){
   // À REMPLACER : numéro WhatsApp des commandes (indicatif 225, sans + ni espaces)
-  var WA_NUMBER = "2250000000000";
-  var WA_DISPLAY = "+225 00 00 00 00 00";
+  var WA_NUMBER = "2250716425192";
+  var WA_DISPLAY = "+225 07 16 42 51 92";
   var P = {
     moto:{n:"Motopompe flottante", p:120000},
     l9:{n:"Tuyau laser spray Ø32, 9 trous, 200 m, 300 microns", p:35000},
