@@ -126,6 +126,29 @@ footer small{opacity:.75;max-width:70ch}
 .pack .tot{font:400 2rem var(--f-display);color:var(--green)}
 .pack .tot small{font:600 .85rem var(--f-body);color:var(--muted)}
 @media (max-width:720px){.pgrid{grid-template-columns:1fr}}
+.cat{background:var(--surface);border-block:1px solid var(--line)}
+.cgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.mini{background:var(--bg);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;gap:.5rem;padding-bottom:.8rem;min-width:0}
+.mini .mph{aspect-ratio:1/1;background:#fff;overflow:hidden}
+.mini .mph img{width:100%;height:100%;object-fit:contain;display:block}
+.mini h3{font:700 .95rem var(--f-body);text-transform:none;letter-spacing:0;padding:0 .8rem;line-height:1.25}
+.mini .mp{font:400 1.35rem var(--f-display);color:var(--green);padding:0 .8rem;margin-top:auto}
+.mini .mp small{font:500 .8rem var(--f-body);color:var(--muted)}
+.mini .btn{margin:0 .8rem;min-height:42px;font-size:.92rem}
+@media (max-width:900px){.cgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:640px){.cgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}}
+.deliv{background:var(--bg)}
+.dgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
+.dcard{background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--green);border-radius:10px;padding:1.3rem;display:flex;flex-direction:column;gap:.7rem;min-width:0}
+.dcard.exp{border-top-color:var(--sun)}
+.dcard h3{font-size:1.4rem}
+.dcard ul{margin:0;padding-left:1.1rem;display:grid;gap:.35rem}
+.dcard .towns{display:flex;gap:.5rem;flex-wrap:wrap}
+.dcard .towns span{background:var(--green);color:var(--on-green);border-radius:999px;padding:.25rem .8rem;font-weight:700;font-size:.9rem}
+.modehint{margin-top:.2rem;padding:.7rem .9rem;border-radius:8px;border:1px solid var(--line);background:var(--bg);font-size:.92rem}
+.modehint.direct{border-color:var(--wa)}
+.modehint.exp{border-color:var(--sun)}
+@media (max-width:720px){.dgrid{grid-template-columns:1fr}}
 </style>
 </head><body>
 
@@ -153,7 +176,7 @@ footer small{opacity:.75;max-width:70ch}
   <li>Commande par WhatsApp</li>
   <li>Pour usage agricole et jardin</li>
   <li>Conseils avant achat</li>
-  <li>Livraison confirmée selon votre ville</li>
+  <li>Paiement à la livraison à Abidjan, Toumodi et Bouaké</li>
 </ul></div></div>
 
 <section id="produits"><div class="wrap">
@@ -239,6 +262,33 @@ footer small{opacity:.75;max-width:70ch}
   <p class="note">Prix en FCFA, hors livraison. Total du pack = prix de la motopompe + prix du tuyau.</p>
 </div></section>
 
+<section class="cat" id="catalogue"><div class="wrap">
+  <div class="sec-h"><h2>Tout le catalogue</h2><p>Pièces, vannes, motopompes, motoculteur et accessoires. Touchez « Commander » sur le produit voulu.</p></div>
+  <div class="cgrid">
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/6897/images/f30a8a3228634ccbb59e3481511df8ae.jpg" alt="Kit d&#x27;irrigation Laser spray 1 ha" loading="lazy" referrerpolicy="no-referrer"></div><h3>Kit d&#x27;irrigation Laser spray 1 ha</h3><div class="mp">1 040 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c1">Commander</a></article>
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/5835/images/668355c39d284968b3cbba3ab02682d1.jpg" alt="Motoculteur 7 CV" loading="lazy" referrerpolicy="no-referrer"></div><h3>Motoculteur 7 CV</h3><div class="mp">550 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c2">Commander</a></article>
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/6876/images/33ca2ee74b4a45bcaa45d078878d02d1.jpg" alt="Motopompe diesel 200 m³" loading="lazy" referrerpolicy="no-referrer"></div><h3>Motopompe diesel 200 m³</h3><div class="mp">2 150 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c3">Commander</a></article>
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/5831/images/a3e2e5f6f2b44039901cc52eb3ef5ef1.jpg" alt="Motopompe Ø75" loading="lazy" referrerpolicy="no-referrer"></div><h3>Motopompe Ø75</h3><div class="mp">100 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c4">Commander</a></article>
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/5829/images/ce5643f630ce46118c0ffcc55d970385.jpg" alt="Tuyaux de refoulement Ø75" loading="lazy" referrerpolicy="no-referrer"></div><h3>Tuyaux de refoulement Ø75</h3><div class="mp">50 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c5">Commander</a></article>
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/6788/images/01251f8f32a54b98982fb068544b8055.jpg" alt="Rouleau de tuyaux goutte à goutte" loading="lazy" referrerpolicy="no-referrer"></div><h3>Rouleau de tuyaux goutte à goutte</h3><div class="mp">130 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c6">Commander</a></article>
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/6786/images/d521a2579d28448482ccd6aae3a25aa3.jpg" alt="Rouleau de tuyaux PEHD Ø32" loading="lazy" referrerpolicy="no-referrer"></div><h3>Rouleau de tuyaux PEHD Ø32</h3><div class="mp"><small>Prix sur demande</small></div><a class="btn btn-wa" href="#commande" data-pick="c7">Commander</a></article>
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/6896/images/40ecfa4875b64227bddf498a324e0ab2.jpg" alt="Laser spray Ø40" loading="lazy" referrerpolicy="no-referrer"></div><h3>Laser spray Ø40</h3><div class="mp">30 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c8">Commander</a></article>
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/5830/images/6877c770eb02432ba3cabe06eb9ef00a.jpg" alt="Filtre Ø32" loading="lazy" referrerpolicy="no-referrer"></div><h3>Filtre Ø32</h3><div class="mp">10 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c9">Commander</a></article>
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/6895/images/c4c243c3348d4320973b15199ea1353a.jpg" alt="Buse d&#x27;arrosage" loading="lazy" referrerpolicy="no-referrer"></div><h3>Buse d&#x27;arrosage</h3><div class="mp">15 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c10">Commander</a></article>
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/6894/images/b5434e5d98824e80bf6fa71e7bee7f19.jpg" alt="Vannes laser spray Ø63/32" loading="lazy" referrerpolicy="no-referrer"></div><h3>Vannes laser spray Ø63/32</h3><div class="mp">4 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c11">Commander</a></article>
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/5826/images/c70a933e75434bc68a9e3f2c67fc7ace.jpg" alt="Vannes laser spray Ø32" loading="lazy" referrerpolicy="no-referrer"></div><h3>Vannes laser spray Ø32</h3><div class="mp">900 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c12">Commander</a></article>
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/6789/images/c4418bfd71db46938d1cce55f792f5ec.jpg" alt="Vannes goutte à goutte" loading="lazy" referrerpolicy="no-referrer"></div><h3>Vannes goutte à goutte</h3><div class="mp">375 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c13">Commander</a></article>
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/6875/images/2b1b9275a2744259ab95c45ef310c711.jpg" alt="CPC 50/32" loading="lazy" referrerpolicy="no-referrer"></div><h3>CPC 50/32</h3><div class="mp">2 500 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c14">Commander</a></article>
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/2167/images/7907d5fb11074d7787b72b85737a24a7.jpg" alt="Vanne automatique" loading="lazy" referrerpolicy="no-referrer"></div><h3>Vanne automatique</h3><div class="mp">7 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c15">Commander</a></article>
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/1772/images/a21da3101aa945d7873ce4ee753f5569.jpg" alt="Robinet pour baril" loading="lazy" referrerpolicy="no-referrer"></div><h3>Robinet pour baril</h3><div class="mp">10 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c16">Commander</a></article>
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/5828/images/2eb69998f5074a8a8d452e79a7202d43.jpg" alt="Carburateur à gaz" loading="lazy" referrerpolicy="no-referrer"></div><h3>Carburateur à gaz</h3><div class="mp">10 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c17">Commander</a></article>
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/5827/images/a1da24ff866c4aebbbeddcb7db2214ca.jpg" alt="Perforateur" loading="lazy" referrerpolicy="no-referrer"></div><h3>Perforateur</h3><div class="mp">7 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c18">Commander</a></article>
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/1759/images/996ea1604f334d3ba3a54ae4923fd790.jpg" alt="Casque antibruit" loading="lazy" referrerpolicy="no-referrer"></div><h3>Casque antibruit</h3><div class="mp">5 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c19">Commander</a></article>
+    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/1592/images/f21f516e908f4ed5b481727a42f52f4a.jpg" alt="Kit de premier secours" loading="lazy" referrerpolicy="no-referrer"></div><h3>Kit de premier secours</h3><div class="mp">10 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c20">Commander</a></article>
+  </div>
+  <p class="note">Prix en FCFA, hors livraison. Disponibilité confirmée sur WhatsApp.</p>
+</div></section>
+
 <section class="vids" id="videos"><div class="wrap">
   <div class="sec-h"><h2>Voyez-la en action</h2><p>Déballage, débit d'eau et arrosage au champ : regardez avant de commander.</p></div>
   <div class="vgrid">
@@ -260,6 +310,28 @@ footer small{opacity:.75;max-width:70ch}
     <img src="img/avis3.jpg" alt="Capture WhatsApp : client remerciant pour la confiance après réception" loading="lazy">
   </div>
   <p class="src">Captures réelles de conversations WhatsApp, numéros et photos de profil des clients masqués.</p>
+</div></section>
+
+<section class="deliv" id="livraison"><div class="wrap">
+  <div class="sec-h"><h2>Livraison et paiement</h2><p>Deux façons de recevoir votre commande, selon votre ville.</p></div>
+  <div class="dgrid">
+    <article class="dcard">
+      <h3>Livraison directe</h3>
+      <div class="towns"><span>Abidjan</span><span>Toumodi</span><span>Bouaké</span></div>
+      <ul>
+        <li><b>Vous payez à la livraison</b>, quand vous recevez votre commande.</li>
+        <li>Nous confirmons le prix et l'heure de passage sur WhatsApp.</li>
+      </ul>
+    </article>
+    <article class="dcard exp">
+      <h3>Expédition vers les autres villes</h3>
+      <ul>
+        <li><b>Paiement à l'avance</b> avant l'envoi du colis.</li>
+        <li>Une fois payé, nous vous envoyons le <b>ticket d'expédition</b>.</li>
+        <li>Vous retirez votre colis dans <b>votre gare</b> avec ce ticket.</li>
+      </ul>
+    </article>
+  </div>
 </div></section>
 
 <section class="order" id="commande"><div class="wrap">
@@ -284,6 +356,28 @@ footer small{opacity:.75;max-width:70ch}
         <option value="k5">Pack motopompe + laser Ø32, 5 trous (145 000 FCFA)</option>
         <option value="k50">Pack motopompe + tuyau plat 50 m Ø50 (150 000 FCFA)</option>
         <option value="k75">Pack motopompe + tuyau plat 50 m Ø75 (160 000 FCFA)</option>
+        <optgroup label="Autres produits">
+          <option value="c1">Kit d'irrigation Laser spray 1 ha (1 040 000 FCFA)</option>
+          <option value="c2">Motoculteur 7 CV (550 000 FCFA)</option>
+          <option value="c3">Motopompe diesel 200 m³ (2 150 000 FCFA)</option>
+          <option value="c4">Motopompe Ø75 (100 000 FCFA)</option>
+          <option value="c5">Tuyaux de refoulement Ø75 (50 000 FCFA)</option>
+          <option value="c6">Rouleau de tuyaux goutte à goutte (130 000 FCFA)</option>
+          <option value="c7">Rouleau de tuyaux PEHD Ø32 (prix sur demande)</option>
+          <option value="c8">Laser spray Ø40 (30 000 FCFA)</option>
+          <option value="c9">Filtre Ø32 (10 000 FCFA)</option>
+          <option value="c10">Buse d'arrosage (15 000 FCFA)</option>
+          <option value="c11">Vannes laser spray Ø63/32 (4 000 FCFA)</option>
+          <option value="c12">Vannes laser spray Ø32 (900 FCFA)</option>
+          <option value="c13">Vannes goutte à goutte (375 FCFA)</option>
+          <option value="c14">CPC 50/32 (2 500 FCFA)</option>
+          <option value="c15">Vanne automatique (7 000 FCFA)</option>
+          <option value="c16">Robinet pour baril (10 000 FCFA)</option>
+          <option value="c17">Carburateur à gaz (10 000 FCFA)</option>
+          <option value="c18">Perforateur (7 000 FCFA)</option>
+          <option value="c19">Casque antibruit (5 000 FCFA)</option>
+          <option value="c20">Kit de premier secours (10 000 FCFA)</option>
+        </optgroup>
       </select>
     </label>
     <div class="row">
@@ -292,7 +386,7 @@ footer small{opacity:.75;max-width:70ch}
           <option>Cocody</option><option>Yopougon</option><option>Abobo</option><option>Marcory</option>
           <option>Plateau</option><option>Treichville</option><option>Koumassi</option><option>Port-Bouët</option>
           <option>Adjamé</option><option>Attécoubé</option><option>Bingerville</option><option>Anyama</option>
-          <option>Songon</option><option>Bouaké</option><option>Autre ville</option>
+          <option>Songon</option><option>Toumodi</option><option>Bouaké</option><option>Autre ville</option>
         </select>
       </label>
       <label for="qty">Quantité
@@ -302,6 +396,10 @@ footer small{opacity:.75;max-width:70ch}
     <label for="name">Votre nom
       <input id="name" type="text" placeholder="Ex : Kouassi Yao" autocomplete="name">
     </label>
+    <label for="town" id="townWrap" hidden>Votre ville et votre gare
+      <input id="town" type="text" placeholder="Ex : Korhogo, gare UTB" autocomplete="off">
+    </label>
+    <p class="modehint" id="modeHint"></p>
     <a class="btn btn-wa" id="waBtn" href="#" target="_blank" rel="noopener">Envoyer ma commande sur WhatsApp</a>
     <p class="numline">Numéro WhatsApp : <b id="numShow"></b></p>
     <p class="hint" id="totalHint"></p>
@@ -342,24 +440,55 @@ footer small{opacity:.75;max-width:70ch}
     k9:{n:"Pack motopompe + laser Ø32, 9 trous", p:155000},
     k5:{n:"Pack motopompe + laser Ø32, 5 trous", p:145000},
     k50:{n:"Pack motopompe + tuyau plat 50 m Ø50", p:150000},
-    k75:{n:"Pack motopompe + tuyau plat 50 m Ø75", p:160000}
+    k75:{n:"Pack motopompe + tuyau plat 50 m Ø75", p:160000},
+    c1:{n:"Kit d'irrigation Laser spray 1 ha", p:1040000},
+    c2:{n:"Motoculteur 7 CV", p:550000},
+    c3:{n:"Motopompe diesel 200 m³", p:2150000},
+    c4:{n:"Motopompe Ø75", p:100000},
+    c5:{n:"Tuyaux de refoulement Ø75", p:50000},
+    c6:{n:"Rouleau de tuyaux goutte à goutte", p:130000},
+    c7:{n:"Rouleau de tuyaux PEHD Ø32", p:0},
+    c8:{n:"Laser spray Ø40", p:30000},
+    c9:{n:"Filtre Ø32", p:10000},
+    c10:{n:"Buse d'arrosage", p:15000},
+    c11:{n:"Vannes laser spray Ø63/32", p:4000},
+    c12:{n:"Vannes laser spray Ø32", p:900},
+    c13:{n:"Vannes goutte à goutte", p:375},
+    c14:{n:"CPC 50/32", p:2500},
+    c15:{n:"Vanne automatique", p:7000},
+    c16:{n:"Robinet pour baril", p:10000},
+    c17:{n:"Carburateur à gaz", p:10000},
+    c18:{n:"Perforateur", p:7000},
+    c19:{n:"Casque antibruit", p:5000},
+    c20:{n:"Kit de premier secours", p:10000}
   };
   var $=function(id){return document.getElementById(id)};
   var prod=$("prod"),city=$("city"),qty=$("qty"),nm=$("name"),btn=$("waBtn"),hint=$("totalHint");
   $("numShow").textContent=WA_DISPLAY; $("numFoot").textContent=WA_DISPLAY;
   function fmt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g," ")}
+  var town=$("town"),townWrap=$("townWrap"),modeHint=$("modeHint");
+  var DIRECT=["cocody","yopougon","abobo","marcory","plateau","treichville","koumassi","port-bouët","adjamé","attécoubé","bingerville","anyama","songon","toumodi","bouaké"];
   function update(){
     var it=P[prod.value], q=Math.max(1,parseInt(qty.value,10)||1);
+    var other=city.value==="Autre ville";
+    townWrap.hidden=!other;
+    var direct=!other && DIRECT.indexOf(city.value.toLowerCase())>-1;
+    var place=other ? (town.value.trim()||"autre ville") : city.value;
+    var mode=direct ? "Livraison directe, paiement à la livraison" : "Expédition, paiement à l'avance, ticket de retrait en gare";
+    modeHint.className="modehint "+(direct?"direct":"exp");
+    modeHint.textContent=direct ? "Livraison directe : vous payez à la livraison." : "Expédition : paiement à l'avance, puis nous vous envoyons le ticket pour retirer votre colis à votre gare.";
     var lines=["Bonjour, je veux commander :",
       "- Produit : "+it.n,
       "- Quantité : "+q,
-      "- Ville/commune : "+city.value];
+      "- Ville/commune : "+place,
+      "- Mode : "+mode];
     if(nm.value.trim()) lines.push("- Nom : "+nm.value.trim());
-    lines.push("- Prix indiqué : "+fmt(it.p*q)+" FCFA");
+    if(it.p>0) lines.push("- Prix indiqué : "+fmt(it.p*q)+" FCFA");
+    else lines.push("- Prix : à confirmer");
     btn.href="https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(lines.join("\n"));
-    hint.textContent = "Total estimé : "+fmt(it.p*q)+" FCFA (hors livraison)";
+    hint.textContent = it.p>0 ? "Total estimé : "+fmt(it.p*q)+" FCFA (hors livraison)" : "Prix à confirmer sur WhatsApp";
   }
-  [prod,city,qty,nm].forEach(function(e){e.addEventListener("input",update)});
+  [prod,city,qty,nm,town].forEach(function(e){e.addEventListener("input",update)});
   document.querySelectorAll("[data-pick]").forEach(function(a){
     a.addEventListener("click",function(){prod.value=a.getAttribute("data-pick");update()});
   });
