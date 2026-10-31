@@ -126,6 +126,16 @@ footer small{opacity:.75;max-width:70ch}
 .pack .tot{font:400 2rem var(--f-display);color:var(--green)}
 .pack .tot small{font:600 .85rem var(--f-body);color:var(--muted)}
 @media (max-width:720px){.pgrid{grid-template-columns:1fr}}
+.kgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+.kit{border:2px solid var(--green);border-radius:10px;padding:1.2rem;display:flex;flex-direction:column;gap:.6rem;min-width:0;background:var(--bg)}
+.kit.best{border-color:var(--sun);box-shadow:0 0 0 2px var(--sun)}
+.kit .area{font:400 2.6rem var(--f-display);color:var(--green);line-height:1}
+.kit ul{list-style:none;padding:0;margin:0;display:grid;gap:.25rem;font-size:.95rem}
+.kit li::before{content:"\2022 ";color:var(--green)}
+.kit .tot{font:400 2rem var(--f-display);color:var(--green)}
+.kit .tot small{font:600 .85rem var(--f-body);color:var(--muted)}
+.kit .tag{align-self:flex-start;background:var(--sun);color:#14231a;font-weight:700;font-size:.8rem;padding:.15rem .6rem;border-radius:999px}
+@media (max-width:900px){.kgrid{grid-template-columns:1fr}}
 .cat{background:var(--surface);border-block:1px solid var(--line)}
 .cgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
 .mini{background:var(--bg);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;gap:.5rem;padding-bottom:.8rem;min-width:0}
@@ -158,7 +168,7 @@ footer small{opacity:.75;max-width:70ch}
   <div class="wrap">
     <div>
       <h1>Pompez et arrosez <em>plus vite</em> vos parcelles</h1>
-      <p class="lead">Motopompe flottante et tuyaux d'irrigation pour la culture maraîchère, les plantations et le jardin. Écrivez-nous sur WhatsApp, nous vous répondons avec le prix et la livraison.</p>
+      <p class="lead">Tuyau flexible de 50 m, kits d'irrigation complets et motopompe flottante pour la culture maraîchère, les plantations et le jardin. Écrivez-nous sur WhatsApp, nous vous répondons avec le prix et la livraison.</p>
       <div class="cta">
         <a class="btn btn-wa" href="#commande">Commander sur WhatsApp</a>
         <a class="btn btn-ghost" href="#produits">Voir les produits</a>
@@ -252,6 +262,16 @@ footer small{opacity:.75;max-width:70ch}
   <p class="note">Prix en FCFA, hors livraison. Nous confirmons la disponibilité et la livraison sur WhatsApp.</p>
 </div></section>
 
+<section id="kits"><div class="wrap">
+  <div class="sec-h"><h2>Kits d'irrigation complets</h2><p>Dites-nous la taille de votre champ, nous vous livrons le kit complet. Livraison chez vous, fiche de pose incluse, motopompe non incluse.</p></div>
+  <div class="kgrid">
+    <article class="kit"><div class="area">¼ ha</div><ul><li>5 rouleaux Laser spray Ø32</li><li>20 vannes Laser spray Ø32</li><li>1 rouleau principal</li><li>1 perceuse</li></ul><div class="tot">185 000 <small>FCFA le kit</small></div><a class="btn btn-wa" href="#commande" data-pick="kh1">Commander le kit ¼ ha</a></article>
+    <article class="kit best"><div class="area">½ ha</div><ul><li>8 rouleaux Laser spray Ø32</li><li>35 vannes Laser spray Ø32</li><li>1 rouleau principal</li><li>1 perceuse</li></ul><div class="tot">375 000 <small>FCFA le kit</small></div><a class="btn btn-wa" href="#commande" data-pick="kh2">Commander le kit ½ ha</a></article>
+    <article class="kit"><div class="area">1 ha</div><ul><li>17 rouleaux Laser spray Ø32</li><li>70 vannes Laser spray Ø32</li><li>1 rouleau principal de 150 m</li><li>1 perceuse</li></ul><div class="tot">680 000 <small>FCFA le kit</small></div><a class="btn btn-wa" href="#commande" data-pick="kh3">Commander le kit 1 ha</a></article>
+  </div>
+  <p class="note">Prix en FCFA. Motopompe non incluse (voir les packs). Écrivez « KIT » et la taille de votre champ sur WhatsApp.</p>
+</div></section>
+
 <section class="packs" id="packs"><div class="wrap">
   <div class="sec-h"><h2>Packs motopompe + tuyau</h2><p>Tout pour irriguer d'un coup : la motopompe et le tuyau, un seul message WhatsApp.</p></div>
   <div class="pgrid">
@@ -266,7 +286,6 @@ footer small{opacity:.75;max-width:70ch}
 <section class="cat" id="catalogue"><div class="wrap">
   <div class="sec-h"><h2>Tout le catalogue</h2><p>Pièces, vannes, motopompes, motoculteur et accessoires. Touchez « Commander » sur le produit voulu.</p></div>
   <div class="cgrid">
-    <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/6897/images/f30a8a3228634ccbb59e3481511df8ae.jpg" alt="Kit d&#x27;irrigation Laser spray 1 ha" loading="lazy" referrerpolicy="no-referrer"></div><h3>Kit d&#x27;irrigation Laser spray 1 ha</h3><div class="mp">1 040 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c1">Commander</a></article>
     <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/5835/images/668355c39d284968b3cbba3ab02682d1.jpg" alt="Motoculteur 7 CV" loading="lazy" referrerpolicy="no-referrer"></div><h3>Motoculteur 7 CV</h3><div class="mp">550 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c2">Commander</a></article>
     <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/6876/images/33ca2ee74b4a45bcaa45d078878d02d1.jpg" alt="Motopompe diesel 200 m³" loading="lazy" referrerpolicy="no-referrer"></div><h3>Motopompe diesel 200 m³</h3><div class="mp">2 150 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c3">Commander</a></article>
     <article class="mini"><div class="mph"><img src="https://yelen-prod-media.s3.us-east-1.amazonaws.com/public/products/1992/5831/images/a3e2e5f6f2b44039901cc52eb3ef5ef1.jpg" alt="Motopompe Ø75" loading="lazy" referrerpolicy="no-referrer"></div><h3>Motopompe Ø75</h3><div class="mp">100 000 <small>FCFA</small></div><a class="btn btn-wa" href="#commande" data-pick="c4">Commander</a></article>
@@ -357,8 +376,12 @@ footer small{opacity:.75;max-width:70ch}
         <option value="k5">Pack motopompe + laser Ø32, 5 trous (145 000 FCFA)</option>
         <option value="k50">Pack motopompe + tuyau plat 50 m Ø50 (150 000 FCFA)</option>
         <option value="k75">Pack motopompe + tuyau plat 50 m Ø75 (160 000 FCFA)</option>
+        <optgroup label="Kits d'irrigation complets">
+          <option value="kh1">Kit ¼ ha, 5 rouleaux Laser spray (185 000 FCFA)</option>
+          <option value="kh2">Kit ½ ha, 8 rouleaux Laser spray (375 000 FCFA)</option>
+          <option value="kh3">Kit 1 ha, 17 rouleaux Laser spray (680 000 FCFA)</option>
+        </optgroup>
         <optgroup label="Autres produits">
-          <option value="c1">Kit d'irrigation Laser spray 1 ha (1 040 000 FCFA)</option>
           <option value="c2">Motoculteur 7 CV (550 000 FCFA)</option>
           <option value="c3">Motopompe diesel 200 m³ (2 150 000 FCFA)</option>
           <option value="c4">Motopompe Ø75 (100 000 FCFA)</option>
@@ -423,7 +446,7 @@ footer small{opacity:.75;max-width:70ch}
 </div></footer>
 
 <div class="bar">
-  <span>Tuyau laser Ø32 dès<b>25 000 FCFA</b></span>
+  <span>Tuyau flexible 50 m dès<b>30 000 FCFA</b></span>
   <a class="btn btn-wa" href="#commande">Commander</a>
 </div>
 
@@ -442,7 +465,9 @@ footer small{opacity:.75;max-width:70ch}
     k5:{n:"Pack motopompe + laser Ø32, 5 trous", p:145000},
     k50:{n:"Pack motopompe + tuyau plat 50 m Ø50", p:150000},
     k75:{n:"Pack motopompe + tuyau plat 50 m Ø75", p:160000},
-    c1:{n:"Kit d'irrigation Laser spray 1 ha", p:1040000},
+    kh1:{n:"Kit d'irrigation ¼ ha (5 rouleaux Laser spray Ø32, 20 vannes, 1 rouleau principal, 1 perceuse)", p:185000},
+    kh2:{n:"Kit d'irrigation ½ ha (8 rouleaux Laser spray Ø32, 35 vannes, 1 rouleau principal, 1 perceuse)", p:375000},
+    kh3:{n:"Kit d'irrigation 1 ha (17 rouleaux Laser spray Ø32, 70 vannes, 1 rouleau principal 150 m, 1 perceuse)", p:680000},
     c2:{n:"Motoculteur 7 CV", p:550000},
     c3:{n:"Motopompe diesel 200 m³", p:2150000},
     c4:{n:"Motopompe Ø75", p:100000},
