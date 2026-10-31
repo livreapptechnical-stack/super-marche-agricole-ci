@@ -160,6 +160,12 @@ footer small{opacity:.75;max-width:70ch}
 .modehint.exp{border-color:var(--sun)}
 @media (max-width:720px){.dgrid{grid-template-columns:1fr}}
 </style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','3981506368649241');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=3981506368649241&ev=PageView&noscript=1"></noscript>
 </head><body>
 
 <div class="top"><div class="wrap"><span><b>Super Marché Agricole CI</b> · Matériel agricole et irrigation</span><span>Commande directe sur WhatsApp</span></div></div>
@@ -517,6 +523,10 @@ footer small{opacity:.75;max-width:70ch}
   [prod,city,qty,nm,town].forEach(function(e){e.addEventListener("input",update)});
   document.querySelectorAll("[data-pick]").forEach(function(a){
     a.addEventListener("click",function(){prod.value=a.getAttribute("data-pick");update()});
+  });
+  btn.addEventListener("click",function(){
+    var it=P[prod.value], q=Math.max(1,parseInt(qty.value,10)||1);
+    if(window.fbq){fbq("track","Lead",{content_name:it.n,value:it.p*q,currency:"XOF"});}
   });
   $("orderForm").addEventListener("submit",function(e){e.preventDefault()});
   var main=$("sprayMain");
